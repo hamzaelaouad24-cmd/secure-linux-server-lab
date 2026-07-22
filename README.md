@@ -44,8 +44,7 @@ sudo whoami
 
 Résultat attendu : `root` — preuve que l'utilisateur a bien les droits sudo, tout en étant connecté sous son propre nom.
 
-**📸 Capture à placer ici : `screenshots/01-sudo-check.png`**
-*(terminal montrant `sudo whoami` répondant `root`)*
+![sudo whoami retourne root](screenshots/01-sudo-check.png)
 
 ### Problème rencontré et résolu
 Le PATH du système ne contenait pas `/usr/sbin` ni `/sbin`, empêchant l'exécution directe de commandes comme `adduser` ou `usermod`. Corrigé en ajoutant la ligne suivante dans `~/.bashrc` :
@@ -102,8 +101,7 @@ ssh hamza@192.168.56.101
 ```
 Résultat attendu : connexion immédiate, **sans aucune demande de mot de passe**.
 
-**📸 Capture à placer ici : `screenshots/02-ssh-key-login.png`**
-*(terminal montrant la connexion SSH réussie sans mot de passe demandé)*
+![Connexion SSH par clé réussie](screenshots/02-ssh-key-login.png)
 
 ### Problème réseau rencontré et résolu
 L'adresse IP par défaut (`10.0.2.15`, mode NAT) n'était pas joignable depuis la machine hôte — erreur `Connection timed out`. Résolu en ajoutant un second adaptateur réseau en mode **Host-only** dans les paramètres VirtualBox de la VM, ce qui a fourni une nouvelle adresse IP accessible : `192.168.56.101`.
@@ -153,8 +151,7 @@ ssh root@192.168.56.101
 ```
 Résultat attendu : `Permission denied (publickey)`.
 
-**📸 Capture à placer ici : `screenshots/03-root-login-blocked.png`**
-*(terminal montrant le refus de connexion pour root)*
+![Connexion root refusée](screenshots/03-root-login-blocked.png)
 
 ---
 
@@ -184,8 +181,7 @@ sudo ufw enable
 sudo ufw status
 ```
 
-**📸 Capture à placer ici : `screenshots/04-ufw-status.png`**
-*(résultat montrant le pare-feu actif, seul le port 22 autorisé)*
+![Statut du pare-feu UFW](screenshots/04-ufw-status.png)
 
 ### Problème DNS rencontré et résolu
 L'installation d'UFW a d'abord échoué à cause d'une résolution DNS défaillante (le service `dhcpcd` régénérait `/etc/resolv.conf` en effaçant les DNS ajoutés manuellement). Résolu en ajoutant le serveur DNS dans le fichier modèle persistant `/etc/resolv.conf.head` :
@@ -245,8 +241,7 @@ sudo fail2ban-client status sshd
 
 Résultat obtenu : `Currently banned: 1`, avec l'IP de la machine hôte bannie automatiquement après les tentatives échouées.
 
-**📸 Capture à placer ici : `screenshots/05-fail2ban-banned.png`**
-*(résultat montrant l'IP bannie dans la jail sshd)*
+![IP bannie par Fail2ban](screenshots/05-fail2ban-banned.png)
 
 ---
 
@@ -346,8 +341,7 @@ PORT   STATE SERVICE VERSION
 
 Sur 1000 ports scannés, un seul est ouvert : le port 22 (SSH). Les 999 autres sont filtrés par UFW — confirmation concrète que le pare-feu fonctionne comme prévu et que la surface d'attaque exposée du serveur est réduite au strict minimum.
 
-**📸 Capture à placer ici : `screenshots/06-nmap-scan.png`**
-*(résultat complet du scan nmap)*
+![Résultat du scan nmap](screenshots/06-nmap-scan.png)
 
 ---
 
