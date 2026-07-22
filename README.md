@@ -375,5 +375,6 @@ secure-linux-server-lab/
     ├── 03-root-login-blocked.png
     ├── 04-ufw-status.png
     ├── 05-fail2ban-banned.png
-    └── 06-nmap-scan.png
+    ├── 06-nmap-scan.png
+    └── 07-services-audit.png
 ```
