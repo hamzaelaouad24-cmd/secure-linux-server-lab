@@ -271,7 +271,7 @@ APT::Periodic::Unattended-Upgrade "1";
 
 ---
 
-## Bonus — Audit et désactivation des services inutiles
+### Audit et désactivation des services inutiles
 
 ### Pourquoi
 Chaque service actif en arrière-plan représente une surface d'attaque potentielle, même minime. Le principe du **moindre privilège** consiste à ne garder actif que le strict nécessaire au fonctionnement du serveur.
