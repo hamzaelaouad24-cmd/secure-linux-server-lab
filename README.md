@@ -319,6 +319,7 @@ systemctl list-unit-files --type=service --state=enabled
 Les 7 services ciblés n'apparaissent plus dans la liste des services actifs, confirmant leur désactivation. Les services essentiels (SSH, UFW, Fail2ban, cron, réseau, apparmor) restent bien actifs.
 
 ---
+![Liste des services après désactivation](screenshots/07-services-audit.png)
 
 ## Test final — Scan nmap
 
