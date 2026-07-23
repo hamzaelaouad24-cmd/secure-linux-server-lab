@@ -1,6 +1,16 @@
 # Secure Linux Server Lab
 
 Hardening complet d'un serveur Debian fraîchement installé, réalisé dans une VM VirtualBox, avec documentation de chaque étape et des choix effectués.
+## Technologies Used
+
+- Debian 13
+- Linux
+- VirtualBox
+- OpenSSH
+- UFW
+- Fail2Ban
+- Nmap
+- Bash
 
 ## Objectif du projet
 
