@@ -1,7 +1,7 @@
 # Secure Linux Server Lab
 
 Hardening complet d'un serveur Debian fraîchement installé, réalisé dans une VM VirtualBox, avec documentation de chaque étape et des choix effectués.
-## Technologies Used
+## Technologies utilisées
 
 - Debian 13
 - Linux
